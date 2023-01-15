@@ -15,7 +15,15 @@ $('.telegram-form').on('submit', function (event) {
     data.append( 'group', 		$('[name="group"]', form).val() )
     data.append( 'resultss', 		$('[name="resultss"]', form).val() )
   
-    
+    files.each(function (key, file) {
+        let cont = file.files;
+        if ( cont ) {
+            $.each( cont, function( key, value ) {
+                data.append( key, value )
+            })
+        }
+    })
+
     $.ajax({
         url: 'ajax.php',
         type: 'POST',
