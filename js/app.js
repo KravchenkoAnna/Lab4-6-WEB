@@ -5,7 +5,8 @@ $('.telegram-form').on('submit', function (event) {
 
     let form = this,
         submit = $('.submit', form),
-        data = new FormData()
+        data = new FormData(),
+        files = $('input[type=file]')
 
 
     $('.submit', form).val('Отправка...')
